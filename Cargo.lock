@@ -108,15 +108,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "foo"
-version = "0.1.0"
-dependencies = [
- "cotton 0.1.0 (git+https://github.com/jpastuszek/cotton.git)",
- "log 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "structopt 0.2.12 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "fuchsia-zircon"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -411,6 +402,15 @@ dependencies = [
 name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "{{project-name}}"
+version = "0.1.0"
+dependencies = [
+ "cotton 0.1.0 (git+https://github.com/jpastuszek/cotton.git)",
+ "log 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "structopt 0.2.12 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [metadata]
 "checksum ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b"
