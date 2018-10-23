@@ -1,7 +1,10 @@
 [package]
-name = "{{project-name}}"
+# name = "{{project-name}}"
+# version = "0.1.0"
+# authors = ["{{authors}}"]
+name = "foo"
 version = "0.1.0"
-authors = ["{{authors}}"]
+authors = ["bar"]
 
 [dependencies]
 cotton = { git = "https://github.com/jpastuszek/cotton.git" }

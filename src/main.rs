@@ -11,16 +11,15 @@ use cotton::prelude::*;
 #[derive(Debug, StructOpt)]
 struct Cli {
     #[structopt(flatten)]
-    logging: LoggingArgs,
+    logging: LoggingOpt,
 
-    /// Just print what would have been done
-    #[structopt(long = "dry-run",short = "-d")]
-    dry_run: bool,
+    #[structopt(flatten)]
+    dry_run: DryRunOpt,
 }
 
 fn main() {
     let args = Cli::from_args();
-    init_logger(&args.logging, module_path!());
+    init_logger(&args.logging, vec![module_path!()]);
 
     info!("Hello, world!");
 }
