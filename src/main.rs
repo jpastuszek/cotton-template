@@ -17,11 +17,12 @@ struct Cli {
     dry_run: DryRunOpt,
 }
 
-fn main() {
+fn main() -> Result<(), Problem> {
     let args = Cli::from_args();
     init_logger(&args.logging, vec![module_path!()]);
 
     info!("Hello, world!");
+    Ok(())
 }
 
 #[cfg(test)]
