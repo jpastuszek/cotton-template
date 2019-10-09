@@ -4,6 +4,6 @@ version = "0.1.0"
 authors = ["{{authors}}"]
 
 [dependencies]
-cotton = { git = "https://github.com/jpastuszek/cotton.git" }
-structopt = "0.2.12"
-log = "0.4.5"
+structopt = "0.3.2"
+log = "0.4.8"
+cotton = "0.0.2"
