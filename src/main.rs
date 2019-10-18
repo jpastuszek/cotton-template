@@ -11,7 +11,7 @@ struct Cli {
     dry_run: DryRunOpt,
 }
 
-fn main() -> Result<(), Problem> {
+fn main() -> FinalResult {
     let args = Cli::from_args();
     init_logger(&args.logging, vec![module_path!()]);
 
