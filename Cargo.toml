@@ -2,9 +2,7 @@
 name = "{{project-name}}"
 version = "0.1.0"
 authors = ["{{authors}}"]
-edition = "2018"
+edition = "2022"
 
 [dependencies]
-structopt = "0.3.2"
-log = "0.4.8"
-cotton = "0.0.20"
+cotton = "0.1.1"
