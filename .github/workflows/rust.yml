@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Generate project
-      run: cargo install cargo-generate && cargo generate --git https://github.com/jpastuszek/cotton-template.git --name foobar
+      run: cd .. && cargo install cargo-generate && cargo generate --git https://github.com/jpastuszek/cotton-template.git --name foobar
     - name: Run project
-      run: cd foobar && cargo run
+      run: cd ../foobar && cargo run
