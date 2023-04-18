@@ -1,0 +1,22 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate project
+      run: cargo install cargo-generate && cargo generate --git https://github.com/jpastuszek/cotton-template.git --name foobar
+    - name: Run project
+      run: cd foobar && cargo run
