@@ -1,28 +1,27 @@
 use cotton::prelude::*;
 
-// https://docs.rs/structopt/0.3.2/structopt/index.html#how-to-derivestructopt
-/// Does stuff
-#[derive(Debug, StructOpt)]
+/// Hello world!
+#[derive(Parser)]
 struct Cli {
-    #[structopt(flatten)]
-    logging: LoggingOpt,
+    #[command(flatten)]
+    logging: ArgsLogger,
 
-    #[structopt(flatten)]
-    dry_run: DryRunOpt,
+    #[command(flatten)]
+    dry_run: ArgsDryRun,
 }
 
 fn main() -> FinalResult {
-    let args = Cli::from_args();
-    init_logger(&args.logging, vec![module_path!()]);
+    let Cli {
+        logging,
+        dry_run,
+    } = Cli::parse();
+    setup_logger(logging, vec![module_path!()]);
 
-    warn!("Hello, world!");
+    if !dry_run.enabled {
+        warn!("Hello world!");
+    }
+
     Ok(())
 }
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+// vim: ft=rust
